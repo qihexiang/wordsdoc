@@ -62,6 +62,6 @@ const parseDef = (rawDefinition: string): Definition => {
 }
 
 const parseLink = (rawLink: string): Link => {
-    const [linkName, linkUrl] = rawLink.split('->')
+    const [linkName, linkUrl] = rawLink.split(':::')
     return { linkName, linkUrl }
 }
