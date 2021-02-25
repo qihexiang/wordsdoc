@@ -1,0 +1,1 @@
+export const afterMultiLineSplit = (item: string): string => item.replace(/\n+$/, '')

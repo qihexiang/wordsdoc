@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <mata charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style></style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/firacode/5.2.0/fira_code.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fira Code', '思源黑体';
+            font-weight: 500;
+        }
+
+        .card {
+            padding: 1rem;
+            border-radius: .5rem;
+            margin: 1rem;
+            box-shadow: 0 0 .5rem silver;
+        }
+
+        .card p, h1, h2, h3, h4{
+            margin-bottom: .25rem;
+            margin-top: .25rem
+        }
+
+        .card h2 {
+            border-bottom: silver solid 1px;
+        }
+
+        .item {
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    // const title = 'test'
+    const [title, data] = ["example",[{"word":"stepwells","definitions":[{"partOfSpeech":"n","description":"印度阶梯井","exampleSentences":[]}],"note":["印度的蓄水建筑"]},{"word":"bygone era","definitions":[{"partOfSpeech":"adj","description":"很久以前的、以往的","exampleSentences":[]},{"partOfSpeech":"n","description":"很久以前的（不愉快的）事","exampleSentences":[]}]},{"word":"descend","definitions":[{"partOfSpeech":"v","description":"下降、来临、下倾","exampleSentences":[]}]},{"word":"recedes","definitions":[{"partOfSpeech":"v","description":"逐渐远离、逐渐变小、（头发）停止生长、变秃","exampleSentences":["As the level of fear recedes, stock market values will rise."]}]},{"word":"negotiated","definitions":[{"word":"negotiate","partOfSpeech":"v","description":"协商、商定、通过（险要的路段）","exampleSentences":[]}]},{"word":"craters","definitions":[{"partOfSpeech":"n","description":"火山口、弹坑","exampleSentences":["The battlefield was full of craters made by exploding shells."]}]},{"word":"elaborate","definitions":[{"partOfSpeech":"adj","description":"复杂的、详尽的、精心制作的","exampleSentences":[]},{"partOfSpeech":"v","description":"详尽的阐述、精心的制作","exampleSentences":[]}],"relatives":["intricately"]},{"word":"storeys","definitions":[{"word":"storey","partOfSpeech":"n","description":"楼层（单位）","exampleSentences":["Houses must not be more than two storeys high."]}]},{"word":"pillars","definitions":[{"partOfSpeech":"n","description":"柱子、柱状物","exampleSentences":[]}]},{"word":"pavilions","definitions":[{"word":"pavilion","partOfSpeech":"n","description":"运动员更衣室，大型临时建筑（帐篷等），亭、阁","exampleSentences":[]}]},{"word":"\nrelentless","definitions":[{"partOfSpeech":"adj","description":"持续而强烈的、不停的、苛刻的","exampleSentences":[]},{"word":"relent","partOfSpeech":"v","description":"变得缓和","exampleSentences":[]}]},{"word":"the intricate decorative sculptures","definitions":[{"partOfSpeech":"phrase","description":"复杂的装饰性雕像","exampleSentences":[]},{"word":"intricate","partOfSpeech":"adj","description":"错综复杂的","exampleSentences":[]},{"word":"decorative","partOfSpeech":"adj","description":"装饰性的","exampleSentences":[]},{"word":"sculptures","partOfSpeech":"n","description":"雕塑、雕刻品","exampleSentences":[]},{"word":"sculpture","partOfSpeech":"v","description":"雕塑、雕刻、刻出","exampleSentences":[]}],"relatives":["intricately"]},{"word":"embellish","definitions":[{"partOfSpeech":"v","description":"美化、装饰、修饰","exampleSentences":[]}]},{"word":"\nchurning butter","definitions":[{"partOfSpeech":"phrase","description":"搅拌黄油","exampleSentences":[]},{"word":"churning","partOfSpeech":"adj","description":"（沸腾）翻滚的","exampleSentences":[]},{"word":"churn","partOfSpeech":"v","description":"剧烈搅动、使恶心反胃、使心烦意乱","exampleSentences":[]}]},{"word":"disuse","definitions":[{"partOfSpeech":"n","description":"废弃、不使用","exampleSentences":[]}]},{"word":"diverted","definitions":[{"word":"divert","partOfSpeech":"v","description":"使...绕道、转向、转移...的注意力","exampleSentences":[]}]},{"word":"dry spells","definitions":[{"partOfSpeech":"phrase","description":"旱季","exampleSentences":[]},{"word":"spell","partOfSpeech":"n","description":"一段时间、咒语","exampleSentences":[]},{"word":"spell","partOfSpeech":"v","description":"拼写、拼成","exampleSentences":[]}]},{"word":"silted up","definitions":[{"partOfSpeech":"phrase","description":"淤塞","exampleSentences":["The soil washed from the hills is silting up the hydroelectric dams."]}]},{"word":"pristine","definitions":[{"partOfSpeech":"adj","description":"崭新的、未开发的、原始的","exampleSentences":[]}]},{"word":"hallmarks","definitions":[{"partOfSpeech":"n","description":"特征、特点、金银的纯度标记","exampleSentences":[]}]},{"word":"carved into niches","definitions":[{"partOfSpeech":"phrase","description":"凿成壁龛","exampleSentences":[]},{"word":"carve","partOfSpeech":"v","description":"雕刻、切块","exampleSentences":[]},{"word":"niches","partOfSpeech":"n","description":"舒心的生活、市场定位、壁龛、山体的凹陷处","exampleSentences":[]}]},{"word":"stunning","definitions":[{"partOfSpeech":"adj","description":"有魅力的、令人留下深刻印象的","exampleSentences":[]},{"word":"stun","partOfSpeech":"v","description":"使...昏迷、留下深刻印象","exampleSentences":[]}]},{"word":"terraces","definitions":[{"partOfSpeech":"n","description":"排房、排屋；露天平台；阶梯状的看台","exampleSentences":[]},{"word":"terrace","partOfSpeech":"v","description":"使...成为阶地、梯田","exampleSentences":[]}]},{"word":"intricately","definitions":[{"partOfSpeech":"adv","description":"复杂的、杂乱的、错综复杂的","exampleSentences":[]}],"relatives":["elaborate"]},{"word":"\nshrines","definitions":[{"partOfSpeech":"n","description":"圣地、神龛、神庙","exampleSentences":[]}]},{"word":"zigzagging","definitions":[{"word":"zigzag","partOfSpeech":"v","description":"之字形的前进","exampleSentences":[]},{"word":"zigzag","partOfSpeech":"n","description":"之字形","exampleSentences":[]}]},{"word":"verandas","definitions":[{"partOfSpeech":"n","description":"房屋底层的游廊","exampleSentences":[]}]},{"word":"ornate","definitions":[{"partOfSpeech":"adj","description":"富丽豪华的","exampleSentences":[]}]},{"word":"\nneglect","definitions":[{"partOfSpeech":"v","description":"忽视、疏漏、未予重视","exampleSentences":[]},{"partOfSpeech":"n","description":"忽略、护士","exampleSentences":[]}]},{"word":"medieval","definitions":[{"partOfSpeech":"adj","description":"中世纪的","exampleSentences":[]}]},{"word":"in far-flung corners","definitions":[{"partOfSpeech":"phrase","description":"在遥远的角落里","exampleSentences":[]},{"word":"far-flung","partOfSpeech":"adj","description":"遥远的、分布广泛的","exampleSentences":[]}]},{"word":"architectural marvels","definitions":[{"partOfSpeech":"phrase","description":"建筑奇迹","exampleSentences":[]},{"word":"marvel","partOfSpeech":"n","description":"令人惊奇的事物、不平凡的成就、奇迹","exampleSentences":[]}]},{"word":"colonnaded","definitions":[{"partOfSpeech":"adj","description":"有列柱、柱廊的","exampleSentences":[]},{"word":"colonnade","partOfSpeech":"n","description":"列柱、柱廊（等距的柱子）","exampleSentences":[]}]}]]
+    document.title = title
+    function DefWord(props) {
+        if (!props.word) return null
+        return (<strong>{props.word} </strong>)
+    }
+    function Examples(props) {
+        if (!props.examples.length) return null
+        return (
+            <div>
+                <h4>例句</h4>
+                <div>{
+                    props.examples.map((example, index) => {
+                        return (
+                            <p key={index}><i>{example}</i></p>
+                        )
+                    })
+                }</div>
+            </div>
+        )
+    }
+    function Definitions(props) {
+        return (
+            <div className="item">
+                <h3>释义</h3>
+                {
+                    props.defs.map((def, index) => {
+                        return (
+                            <div key={index}>
+                                <p>
+                                    <strong>{index + 1} </strong>
+                                    <DefWord word={def.word} />
+                                    <i>{def.partOfSpeech}.</i>
+                                    <span>{def.description}</span>
+                                </p>
+                                <Examples examples={def.exampleSentences} />
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
+    function Note(props) {
+        if (!props.note) return null
+        return (
+            <div className="item">
+                <h3>注释</h3>
+                {
+                    props.note.map((para, index) => <p key={index}>{para}</p>)
+                }
+            </div>
+        )
+    }
+    function Links(props) {
+        if (!props.links) return null
+        return (
+            <div className="item">
+                <h3>链接</h3>
+                {
+                    props.links.map((link, index) => {
+                        return <span key={index}><a href={link.linkUrl} target="_blank">{link.linkName}</a> </span>
+                    })
+                }
+            </div>
+        )
+    }
+    function Rels(props) {
+        if (!props.rels) return null
+        return (
+            <div className="item">
+                <h3>相关单词</h3>
+                <p>{
+                    props.rels.map((rel, index) => {
+                        return <span key={index}><a href={'#' + rel}>{rel}</a> </span>
+                    })
+                }</p>
+            </div>
+        )
+    }
+    function WordCard(props) {
+        const { word, definitions, note, links, relatives } = props.wordObj
+        return (
+            <div id={word} className="card">
+                <h2>{word}</h2>
+                <Definitions defs={definitions}/>
+                <Note note={note}/>
+                <Links links={links}/>
+                <Rels rels={relatives}/>
+            </div>
+        )
+    }
+    ReactDOM.render(
+        <div id="main">
+            <header className="card">
+                <h1>{title}</h1>
+            </header>
+            <div id="wordList">{
+                data.map((wordObj, index) => {
+                    return <WordCard wordObj={wordObj} key={index} />
+                })
+            }</div>
+        </div>
+        , app)
+</script>
+
+</html>
