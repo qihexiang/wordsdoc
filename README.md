@@ -28,6 +28,9 @@ bygone era
 bygone//adj//很久以前的、以往的
 ...
 bygone//n//很久以前的（不愉快的）事
+---
+---
+Merriam Webster:::https://www.merriam-webster.com/dictionary/bygone
 
 elaborate
 ---
