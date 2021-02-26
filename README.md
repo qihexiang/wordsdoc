@@ -53,4 +53,6 @@ intricately
 
 ## 注意
 
-打开输出文件需要网络连接以加载React和Babel。
+~~打开输出文件需要网络连接以加载React和Babel。~~
+
+不需要了。
