@@ -1,24 +1,5 @@
 import { afterMultiLineSplit } from './utils'
-
-interface Definition {
-    word?: string
-    partOfSpeech: string
-    description: string
-    exampleSentences?: string[]
-}
-
-interface Link {
-    linkName: string
-    linkUrl: string
-}
-
-interface Word {
-    word: string
-    definitions: Definition[]
-    note?: string[]
-    links?: Link[]
-    relatives?: string[]
-}
+import { Word, Definition, Link } from './interfaces'
 
 export const parse = (data: string): Word => {
     const [
@@ -30,34 +11,26 @@ export const parse = (data: string): Word => {
     ] = data
         .split('---\n')
         .map(afterMultiLineSplit)
-    const result: Word = {
+    return {
         word,
         definitions: rawDefinitions.split('...\n')
             .map(afterMultiLineSplit)
             .map(parseDef),
+        note: note ? note.split('\n'): undefined,
+        links: rawLinks ? rawLinks.split('\n').map(parseLink) : undefined,
+        relatives: rawRelatives? rawRelatives.split('\n') : undefined
     }
-    if (note) result.note = note.split('\n')
-    if (rawLinks) result.links = rawLinks.split('\n')
-        .map(parseLink)
-    if (rawRelatives) result.relatives = rawRelatives
-        .split('\n')
-    return result
 }
 
 const parseDef = (rawDefinition: string): Definition => {
-    const [defStr, ...example] = rawDefinition.split('\n')
+    const [defStr, ...examples] = rawDefinition.split('\n')
     const splitedDef = defStr.replace(/\n+$/, '').split('//')
-    if (splitedDef.length === 3) {
-        const [word, partOfSpeech, description] = splitedDef
-        return {
-            word, partOfSpeech, description, exampleSentences: example
-        }
-    }
-    else {
-        const [partOfSpeech, description] = splitedDef
-        return {
-            partOfSpeech, description, exampleSentences: example
-        }
+    const hasWord = 2 in splitedDef
+    return {
+        word: hasWord ? splitedDef[0] : undefined,
+        partOfSpeech: splitedDef[splitedDef.length - 2],
+        description: splitedDef[splitedDef.length - 1],
+        examples: examples.length ? examples : undefined
     }
 }
 

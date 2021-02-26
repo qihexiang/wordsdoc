@@ -4,11 +4,8 @@
 <head>
     <mata charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>{renderedTitle}</title>
     <style></style>
-    <script src="https://cdn.bootcdn.net/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.min.js"></script>
     <link href="https://cdn.bootcdn.net/ajax/libs/firacode/5.2.0/fira_code.min.css" rel="stylesheet">
     <style>
         body {
@@ -40,114 +37,10 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">{renderedDOM}</div>
 </body>
 <script type="text/babel">
-    // const title = 'test'
-    const [title, data] = DATA
     document.title = title
-    function DefWord(props) {
-        if (!props.word) return null
-        return (<strong>{props.word} </strong>)
-    }
-    function Examples(props) {
-        if (!props.examples.length) return null
-        return (
-            <div>
-                <h4>例句</h4>
-                <div>{
-                    props.examples.map((example, index) => {
-                        return (
-                            <p key={index}><i>{example}</i></p>
-                        )
-                    })
-                }</div>
-            </div>
-        )
-    }
-    function Definitions(props) {
-        return (
-            <div className="item">
-                <h3>释义</h3>
-                {
-                    props.defs.map((def, index) => {
-                        return (
-                            <div key={index}>
-                                <p>
-                                    <strong>{index + 1} </strong>
-                                    <DefWord word={def.word} />
-                                    <i>{def.partOfSpeech}.</i>
-                                    <span>{def.description}</span>
-                                </p>
-                                <Examples examples={def.exampleSentences} />
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        )
-    }
-    function Note(props) {
-        if (!props.note) return null
-        return (
-            <div className="item">
-                <h3>注释</h3>
-                {
-                    props.note.map((para, index) => <p key={index}>{para}</p>)
-                }
-            </div>
-        )
-    }
-    function Links(props) {
-        if (!props.links) return null
-        return (
-            <div className="item">
-                <h3>链接</h3>
-                {
-                    props.links.map((link, index) => {
-                        return <span key={index}><a href={link.linkUrl} target="_blank">{link.linkName}</a> </span>
-                    })
-                }
-            </div>
-        )
-    }
-    function Rels(props) {
-        if (!props.rels) return null
-        return (
-            <div className="item">
-                <h3>相关单词</h3>
-                <p>{
-                    props.rels.map((rel, index) => {
-                        return <span key={index}><a href={'#' + rel}>{rel}</a> </span>
-                    })
-                }</p>
-            </div>
-        )
-    }
-    function WordCard(props) {
-        const { word, definitions, note, links, relatives } = props.wordObj
-        return (
-            <div id={word} className="card">
-                <h2>{word}</h2>
-                <Definitions defs={definitions}/>
-                <Note note={note}/>
-                <Links links={links}/>
-                <Rels rels={relatives}/>
-            </div>
-        )
-    }
-    ReactDOM.render(
-        <div id="main">
-            <header className="card">
-                <h1>{title}</h1>
-            </header>
-            <div id="wordList">{
-                data.map((wordObj, index) => {
-                    return <WordCard wordObj={wordObj} key={index} />
-                })
-            }</div>
-        </div>
-        , app)
 </script>
 
 </html>
