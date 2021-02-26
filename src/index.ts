@@ -33,4 +33,4 @@ const writeData = (data: string) => {
     const temp = await loadTemplate()
     const rendered = temp.replace('{renderedTitle}', title).replace('{renderedDOM}', dom)
     return writeData(rendered)
-})()
+})().catch(console.error)
