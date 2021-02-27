@@ -9,7 +9,7 @@ import { parse, splitWords } from './wd2'
 import { clearComments, clearMultiEmptyLine, crlf2lf } from './utils'
 import { App } from './react'
 
-let fileIn = process.argv[3]
+let fileIn = process.argv[2]
 const title = basename(fileIn).replace(/\.wd2+$/, '')
 if (process.platform == 'win32') {
     if (fileIn.match(/^\./)) fileIn = join(process.cwd(), fileIn)
