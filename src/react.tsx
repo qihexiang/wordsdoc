@@ -46,7 +46,7 @@ function Note(props: { note: string[] | undefined }) {
     if (!props.note) return null
     return (
         <div className="item">
-            <h3>注释</h3>
+            <h3>说明</h3>
             {
                 props.note.map((para, index) => <p key={index}>{para}</p>)
             }

@@ -4,6 +4,7 @@ import { parse } from './wd2'
 import { basename, join, resolve } from 'path'
 import { renderToString } from 'react-dom/server'
 import { App } from './react'
+import { clearComments } from './utils'
 
 let [fileIn, fileOut] = process.argv.splice(2)
 const title = basename(fileIn).replace(/\.wd2+$/, '')
@@ -17,6 +18,8 @@ if (!fileOut) fileOut = fileIn.replace(/\.wd2+$/, '.html')
 
 const getData = () => readFile(fileIn, 'utf-8')
     .then(data => data.replace(/\r\n/g, '\n'))
+    .then(clearComments)
+    .then(data => data.replace(/\n{3,}/, '\n\n'))
     .then(data => data.split('\n\n'))
     .then(data => data.map(parse))
     .then(data => ({ title, data }))

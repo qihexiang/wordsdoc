@@ -21,7 +21,7 @@ export const parse = (data: string, index: number): Word => {
         }
     } catch (err) {
         console.log(`Error happend when parse paragraph ${index + 1}:\n`)
-        data.split('\n').map(line => console.log(`> ${line}`))
+        data.split('\n').map(line => console.log(` \x1B[31m>\x1B[0m ${line}`))
         console.log()
         throw err
     }
@@ -45,14 +45,14 @@ const parseDef = (rawDefinition: string, index: number): Definition => {
         const splitedDef = defStr.replace(/\n+$/, '').split('//')
         examples.map((item, index) => {
             if(item.match('//')) {
-                console.log("SYNTAX WARNING")
+                console.log("\x1B[033mSYNTAX WARNING\x1B[0m")
                 console.log(`Find a definition-like example at ${index + 1} line(s) after：`)
-                console.log(`> ${defStr}`)
+                console.log(` \x1B[36m>\x1B[0m ${defStr}`)
                 console.log('as')
-                console.log(`> ${item}`)
+                console.log(` \x1B[36m>\x1B[0m ${item}`)
             }
         })
-        if (splitedDef.length < 2) throw Error('Invalid definition.')
+        if (splitedDef.length < 2) throw Error('INVALIDE DEFINITION')
         const hasWord = 2 in splitedDef
         return {
             word: hasWord ? splitedDef[0] : undefined,
@@ -61,8 +61,9 @@ const parseDef = (rawDefinition: string, index: number): Definition => {
             examples: examples.length ? examples : undefined
         }
     } catch (err) {
-        console.log(`Error happend when parse definition ${index + 1}\n`)
-        rawDefinition.split('\n').map(line => console.log(`> ${line}`))
+        console.log('\x1B[31m%s\x1B[0m', err.message)
+        console.log(`at definition ${index + 1}\n`)
+        rawDefinition.split('\n').map(line => console.log(` \x1B[36m>\x1B[0m ${line}`))
         console.log()
         throw err
     }
@@ -71,11 +72,12 @@ const parseDef = (rawDefinition: string, index: number): Definition => {
 const parseLink = (rawLink: string, index: number): Link => {
     try {
         const [linkName, linkUrl] = rawLink.split(':::')
-        if (!(linkName && linkUrl)) throw Error('Invalid link.')
+        if (!(linkName && linkUrl)) throw Error('INVALIDE LINK')
         return { linkName, linkUrl }
     } catch (err) {
-        console.log(`Error happend when parse link ${index + 1}\n`)
-        console.log(`> ${rawLink}`)
+        console.log('\x1B[31m%s\x1B[0m', err.message)
+        console.log(`at link ${index + 1}\n`)
+        console.log(` \x1B[36m>\x1B[0m ${rawLink}`)
         console.log()
         throw err
     }

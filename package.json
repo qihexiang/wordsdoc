@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "tsc && node dist/index.js example.wd2",
+    "drytest": "node dist/index.js example.wd2",
     "build": "tsc"
   },
   "author": "",
