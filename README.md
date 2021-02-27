@@ -12,7 +12,7 @@
 
 ## WordsDoc2 CLI
 
-`wd2 inputFilePath [outFilePath]`，输入文件名后缀应为`.wd2`，输出文件名为`.html`。
+`wd2 inputFilePath`，输入文件名后缀应为`.wd2`，输出文件与输入文件同名，扩展名为`.html`。
 
 ## 文件格式：.wd2
 

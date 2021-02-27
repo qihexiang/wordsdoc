@@ -1,6 +1,8 @@
 import { afterMultiLineSplit } from './utils'
 import { Word, Definition, Link } from './interfaces'
 
+export const splitWords = (data: string): string[] => data.split('\n\n')
+
 export const parse = (data: string, index: number): Word => {
     try {
         const [
