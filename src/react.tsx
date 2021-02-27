@@ -5,6 +5,7 @@ function DefWord(props: { word: string | undefined }) {
     if (!props.word) return null
     return (<strong>{props.word} </strong>)
 }
+
 function Examples(props: { examples: Definition["examples"] }) {
     if (!props.examples) return null
     return (
@@ -20,6 +21,7 @@ function Examples(props: { examples: Definition["examples"] }) {
         </div>
     )
 }
+
 function Definitions(props: { defs: Definition[] }) {
     return (
         <div className="item">
@@ -42,6 +44,7 @@ function Definitions(props: { defs: Definition[] }) {
         </div>
     )
 }
+
 function Note(props: { note: string[] | undefined }) {
     if (!props.note) return null
     return (
@@ -53,6 +56,7 @@ function Note(props: { note: string[] | undefined }) {
         </div>
     )
 }
+
 function Links(props: { links: Link[] | undefined }) {
     if (!props.links) return null
     return (
@@ -66,6 +70,7 @@ function Links(props: { links: Link[] | undefined }) {
         </div>
     )
 }
+
 function Rels(props: {rels: string[] | undefined}) {
     if (!props.rels) return null
     return (
@@ -79,6 +84,7 @@ function Rels(props: {rels: string[] | undefined}) {
         </div>
     )
 }
+
 function WordCard(props: {wordObj: Word}) {
     const { word, definitions, note, links, relatives } = props.wordObj
     return (
