@@ -8,7 +8,7 @@
 - 一个文本编辑器
 - 一个Shell
 
-将仓库克隆到本地后，运行`npm install && npm run build && npm install . -g`，`wd2`命令就会被全局安装。
+将仓库克隆到本地后，运行`npm install wordsdoc2 -g`，`wd2`命令就会被全局安装。
 
 ## WordsDoc2 CLI
 
