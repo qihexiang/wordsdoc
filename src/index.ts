@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { readFile, writeFile } from 'fs/promises'
 import { basename, join, resolve } from 'path'
-import { renderToString } from 'react-dom/server'
+import { renderToStaticMarkup } from 'react-dom/server'
 
 import { Word } from './interfaces'
 
@@ -35,7 +35,7 @@ const writeData = (data: string) => {
 
 (async function main(): Promise<void> {
     const data: { title: string, data: Word[] } = await getData()
-    const dom: string = renderToString(App(data))
+    const dom: string = renderToStaticMarkup(App(data))
     const temp: string = await loadTemplate()
     const rendered: string = temp.replace('{renderedTitle}', title).replace('{renderedDOM}', dom)
     return writeData(rendered)
